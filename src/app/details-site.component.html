@@ -1,0 +1,69 @@
+<div *ngIf="site" class="row">
+  <div class="col s12 m8 offset-m2">
+    <!-- Site title-->
+    <h2 class="header center">{{ site.name }}</h2>
+
+    <!-- Image -->
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="site.image" [ngStyle]="{'padding': '2rem'}" />
+      </div>
+
+      <!-- Card -->
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <!-- Name -->
+                <td>Nom</td>
+                <td>
+                  <strong>{{ site.name }}</strong>
+                </td>
+              </tr>
+              <!-- Description -->
+              <tr>
+                <td>Description</td>
+                <td>
+                  <strong>{{ site.description }}</strong>
+                </td>
+              </tr>
+              <!-- Lien -->
+              <tr>
+                <td>Lien</td>
+                <td>
+                  <strong>{{ site.link }}</strong>
+                </td>
+              </tr>
+              <!-- Type -->
+              <tr>
+                <td>Types</td>
+                <td>
+                  <span
+                    *ngFor="let type of site.types"
+                    class="{{ type | siteTypeColor }}"
+                    >{{ type }}</span
+                  >
+                </td>
+              </tr>
+              <!-- Date création -->
+              <tr>
+                <td>Date de création</td>
+                <td>
+                  <em>{{ site.created | date: "dd/MM/yyyy" }}</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Retour -->
+        <div class="card-action" [ngStyle]="{'cursor': 'pointer'}">
+          <a (click)="goBack()">Retour</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 0 sites -->
+<h4 *ngIf="!site" class="center">Aucun Site à afficher !</h4>

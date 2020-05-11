@@ -1,0 +1,25 @@
+<h1 class="center">{{ title }}</h1>
+
+<div class="container">
+  <div class="row">
+    <!-- Les sites -->
+    <div *ngFor="let site of sites" class="col s6 m4">
+      <div class="card horizontal" (click)="selectSite(site)" [stBorderCard]="site.borderColor">
+        <!-- Image -->
+        <div class="card-image">
+          <img [src]="site.image" />
+        </div>
+        <!-- Contenu -->
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ site.name }}</p>
+            <p>
+              <small> {{ site.created | date:"dd/MM/yyyy" }}</small>
+            </p>
+            <span *ngFor="let type of site.types" class='{{ type | siteTypeColor }}'> {{ type }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
