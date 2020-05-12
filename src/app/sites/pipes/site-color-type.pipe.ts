@@ -32,6 +32,9 @@ export class SiteColorTypePipe implements PipeTransform {
       case "code":
         color = "deep-purple";
         break;
+      case "css":
+        color = "yellow";
+        break;
       default:
         color = "light-grey";
         break;

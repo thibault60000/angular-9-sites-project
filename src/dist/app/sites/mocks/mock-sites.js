@@ -21,5 +21,25 @@ exports.SITES = [
         created: new Date(),
         borderColor: "#008bdd"
     },
+    {
+        id: 3,
+        link: "https://griddy.io/",
+        name: "Griddy",
+        description: "Générateur de code CSS pour GRID Layout",
+        image: "https://pbs.twimg.com/media/C9J2sinXkAEw94F.jpg",
+        types: ["css", "design"],
+        created: new Date(),
+        borderColor: "#3374dc"
+    },
+    {
+        id: 4,
+        link: "https://haltu.github.io/muuri/",
+        name: "Muuri",
+        description: "Générateur de code CSS pour GRID Layout",
+        image: "https://res.cloudinary.com/simple-things/image/upload/$wpsize_!_cld_full!,w_1600,h_1011,c_scale/v1585775197//Muuri-Responsive-filterable-grids.png",
+        types: ["css", "design"],
+        created: new Date(),
+        borderColor: "#3a98fc"
+    },
 ];
 //# sourceMappingURL=mock-sites.js.map
