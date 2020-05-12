@@ -11,27 +11,19 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
 // Composants
 var app_component_1 = require("./app.component");
-var list_sites_component_1 = require("./list-sites.component");
-var details_site_component_1 = require("./details-site.component");
 var page_not_found_component_1 = require("./page-not-found.component");
+// Modules
+var sites_module_1 = require("./sites/sites.module");
 // Directives
-var border_card_directive_1 = require("./directives/border-card.directive");
 // Pipes
-var site_color_type_pipe_1 = require("./pipes/site-color-type.pipe");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-            declarations: [
-                app_component_1.AppComponent,
-                border_card_directive_1.BorderCardDirective,
-                site_color_type_pipe_1.SiteColorTypePipe,
-                list_sites_component_1.ListSitesComponent,
-                details_site_component_1.DetailsSiteComponent,
-                page_not_found_component_1.PageNotFoundComponent
-            ],
+            // BrwoserModule en 1er, et le AppRouting à la fin
+            imports: [platform_browser_1.BrowserModule, sites_module_1.SitesModule, app_routing_module_1.AppRoutingModule],
+            declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent],
             bootstrap: [app_component_1.AppComponent],
         })
     ], AppModule);

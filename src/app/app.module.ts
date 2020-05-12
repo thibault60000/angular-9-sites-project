@@ -4,25 +4,19 @@ import { AppRoutingModule } from "./app-routing.module";
 
 // Composants
 import { AppComponent } from "./app.component";
-import { ListSitesComponent } from "./list-sites.component";
-import { DetailsSiteComponent } from "./details-site.component";
 import { PageNotFoundComponent } from "./page-not-found.component";
+
+// Modules
+import { SitesModule } from "./sites/sites.module";
+
 // Directives
-import { BorderCardDirective } from "./directives/border-card.directive";
 
 // Pipes
-import { SiteColorTypePipe } from "./pipes/site-color-type.pipe";
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule],
-  declarations: [
-    AppComponent,
-    BorderCardDirective,
-    SiteColorTypePipe,
-    ListSitesComponent,
-    DetailsSiteComponent,
-    PageNotFoundComponent
-  ],
+  // BrwoserModule en 1er, et le AppRouting à la fin
+  imports: [BrowserModule, SitesModule, AppRoutingModule],
+  declarations: [AppComponent, PageNotFoundComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

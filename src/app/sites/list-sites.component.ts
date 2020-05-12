@@ -8,8 +8,8 @@ import { SITES } from "./mocks/mock-sites";
 
 @Component({
   selector: "list-site",
-  templateUrl: `./app/list-sites.component.html`,
-  styleUrls: [`./app/list-sites.component.css`],
+  templateUrl: `./app/sites/list-sites.component.html`,
+  styleUrls: [`./app/sites/list-sites.component.css`],
 })
 export class ListSitesComponent implements OnInit {
   // Variables

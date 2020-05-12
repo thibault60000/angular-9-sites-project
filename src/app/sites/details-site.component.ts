@@ -5,7 +5,7 @@ import { SITES } from "./mocks/mock-sites";
 
 @Component({
   selector: "details-site",
-  templateUrl: "./app/details-site.component.html",
+  templateUrl: "./app/sites/details-site.component.html",
 })
 export class DetailsSiteComponent implements OnInit {
   sites: Site[] = null;

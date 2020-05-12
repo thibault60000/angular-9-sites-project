@@ -8,22 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var page_not_found_component_1 = require("./page-not-found.component");
-// routes
-var appRoutes = [
-    { path: "", redirectTo: "sites", pathMatch: "full" },
-    { path: "**", component: page_not_found_component_1.PageNotFoundComponent },
+var list_sites_component_1 = require("./list-sites.component");
+var details_site_component_1 = require("./details-site.component");
+// les routes du module Pokémon
+var sitesRoutes = [
+    { path: "sites", component: list_sites_component_1.ListSitesComponent },
+    { path: "site/:id", component: details_site_component_1.DetailsSiteComponent },
 ];
-var AppRoutingModule = /** @class */ (function () {
-    function AppRoutingModule() {
+var SitesRoutingModule = /** @class */ (function () {
+    function SitesRoutingModule() {
     }
-    AppRoutingModule = __decorate([
+    SitesRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
+            imports: [router_1.RouterModule.forChild(sitesRoutes)],
             exports: [router_1.RouterModule],
         })
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], SitesRoutingModule);
+    return SitesRoutingModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.SitesRoutingModule = SitesRoutingModule;
+//# sourceMappingURL=sites-routing.module.js.map
