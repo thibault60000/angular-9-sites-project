@@ -1,6 +1,58 @@
-.card-image img {
-    max-height: 100%;
-    padding: 0.5rem;
-    object-fit: cover;
-  }
-  
+/* Liste */
+h1 {
+  font-family: sans-serif;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+div.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* Item */
+div.site-item {
+  width: 20%;
+  display: flex;
+  margin: 0.5rem;
+}
+/* Image de l'item */
+div.card-image {
+  width: 40%;
+  padding: 0.5rem;
+  max-height: 100%;
+}
+div.card-image img {
+  max-height: 100%;
+  object-fit: cover;
+}
+/* Contenu de l'item */
+div.card-stacked {
+  width: auto;
+  margin-left: 1rem;
+  font-family: cursive;
+}
+div.card-content h2 {
+  width: auto;
+  font-size: 1.2rem;
+  font-family: cursive;
+  margin-left: 0;
+}
+
+/* chips */
+.chip {
+  border-radius: 15px;
+  padding: 0.1rem 0.5rem;
+  margin-right: 0.5rem;
+}
+.chip.red {
+  background-color: rgb(255, 126, 120);
+}
+.chip.blue {
+  background-color: #42b9e6;
+}
+.chip.green {
+  background-color: #52bd57;
+}

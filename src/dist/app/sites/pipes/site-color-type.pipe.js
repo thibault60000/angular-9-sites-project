@@ -18,31 +18,31 @@ var SiteColorTypePipe = /** @class */ (function () {
         var color;
         switch (type) {
             case "collaboratif":
-                color = "red lighten-1";
+                color = "red";
                 break;
             case "dessin":
-                color = "blue lighten-1";
+                color = "blue";
                 break;
             case "scrum":
-                color = "green lighten-1";
+                color = "green";
                 break;
             case "javascript":
-                color = "brown lighten-1";
+                color = "brown";
                 break;
             case "ux":
-                color = "grey lighten-3";
-                break;
-            case "design":
-                color = "blue lighten-3";
-                break;
-            case "code":
-                color = "deep-purple accent-1";
-                break;
-            default:
                 color = "grey";
                 break;
+            case "design":
+                color = "light-blue";
+                break;
+            case "code":
+                color = "deep-purple";
+                break;
+            default:
+                color = "light-grey";
+                break;
         }
-        return "chip " + color + " white-text";
+        return "chip " + color;
     };
     SiteColorTypePipe = __decorate([
         core_1.Pipe({ name: "siteTypeColor" })
