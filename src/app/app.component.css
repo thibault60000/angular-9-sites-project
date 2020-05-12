@@ -1,3 +1,4 @@
+/* Navbar */
 nav {
   display: block;
   padding: 2rem;
@@ -8,7 +9,6 @@ nav div.nav-container {
   background-color: #ffcf00;
   padding: 0.5rem 2rem;
   border-radius: 2px;
-  /* Parallelogram */
   display: inline-block;
   transform: skew(-15deg);
   transition-property: transform, background-color;

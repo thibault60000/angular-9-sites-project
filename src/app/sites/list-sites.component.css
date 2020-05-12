@@ -5,6 +5,7 @@ h1 {
   font-size: 1.5rem;
   display: inline-block;
   margin-bottom: 2rem;
+  color:#464545;
 }
 
 div.container {
@@ -17,6 +18,7 @@ div.site-item {
   width: 20%;
   display: flex;
   margin: 0.5rem;
+  border-radius: 5px;
 }
 /* Image de l'item */
 div.card-image {
@@ -39,6 +41,7 @@ div.card-content h2 {
   font-size: 1.2rem;
   font-family: cursive;
   margin-left: 0;
+  color: #464545;
 }
 
 /* chips */
