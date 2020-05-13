@@ -6,13 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// System
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var list_sites_component_1 = require("./list-sites.component");
-var details_site_component_1 = require("./details-site.component");
+// Composants
+var list_sites_component_1 = require("./list-sites/list-sites.component");
+var details_site_component_1 = require("./details-site/details-site.component");
+var edit_site_component_1 = require("./edit-site/edit-site.component");
 // les routes du module Pokémon
 var sitesRoutes = [
     { path: "sites", component: list_sites_component_1.ListSitesComponent },
+    { path: "site/edit/:id", component: edit_site_component_1.EditSiteComponent },
     { path: "site/:id", component: details_site_component_1.DetailsSiteComponent },
 ];
 var SitesRoutingModule = /** @class */ (function () {

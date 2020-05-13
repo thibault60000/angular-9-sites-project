@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { SitesService } from "./services/sites.service";
-import { Site } from "./objects/site";
+import { SitesService } from "../services/sites.service";
+import { Site } from "../objects/site";
 
 @Component({
   selector: "site-form",
-  templateUrl: "./app/sites/site-form.component.html",
-  styleUrls: ["./app/sites/site-form.component.css"],
+  templateUrl: "./app/sites/site-form/site-form.component.html",
+  styleUrls: ["./app/sites/site-form/site-form.component.css"],
 })
 export class SiteFormComponent implements OnInit {
   // Propriété d'entrée

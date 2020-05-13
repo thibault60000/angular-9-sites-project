@@ -2,14 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router, Params } from "@angular/router";
 
 // Services
-import { SitesService } from "./services/sites.service";
+import { SitesService } from "../services/sites.service";
 
 // Objects
-import { Site } from "./objects/site";
+import { Site } from "../objects/site";
 
 @Component({
   selector: "details-site",
-  templateUrl: "./app/sites/details-site.component.html"
+  templateUrl: "./app/sites/details-site/details-site.component.html",
 })
 export class DetailsSiteComponent implements OnInit {
   site: Site = null;
@@ -30,5 +30,11 @@ export class DetailsSiteComponent implements OnInit {
   // Retour page principale
   goBack(): void {
     this.router.navigate(["/sites"]);
+  }
+
+  // Aller à l'édition d'un site
+  goEdit(site: Site): void {
+    let link = ["/site/edit", site.id];
+    this.router.navigate(link);
   }
 }

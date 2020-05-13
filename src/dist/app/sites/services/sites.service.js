@@ -22,7 +22,7 @@ var SitesService = /** @class */ (function () {
         return site[0];
     };
     SitesService.prototype.getSiteTypes = function () {
-        return ["dessin", "collaboratif", "scrum", "css", "design"];
+        return ["dessin", "collaboratif", "scrum", "css", "design", "tutoriel", "code", "framework"];
     };
     SitesService = __decorate([
         core_1.Injectable()

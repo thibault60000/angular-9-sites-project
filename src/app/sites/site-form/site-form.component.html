@@ -12,12 +12,12 @@
           class="form-control"
           id="name"
           required
-          pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+          pattern="^[a-zA-Zàéèç]{1,25}$"
           [(ngModel)]="site.name"
           name="name"
           #name="ngModel"
         />
-
+        <!-- Pristine = N'a jamais été modifié -->
         <div [hidden]="name.valid || name.pristine" class="card-panel red">
           Le nom du site est requis (1-25).
         </div>
@@ -27,11 +27,11 @@
       <div class="form-group">
         <label for="description">Description</label>
         <input
-          type="number"
+          type="text"
           class="form-control"
           id="description"
           required
-          pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+          pattern="^[a-zA-Zàéèç]{1,99}$"
           [(ngModel)]="site.description"
           name="Description"
           #description="ngModel"
@@ -40,7 +40,7 @@
           [hidden]="description.valid || description.pristine"
           class="card-panel red"
         >
-          La description du site est requise (1-255).
+          La description du site est requise (1-99).
         </div>
       </div>
 
@@ -48,17 +48,17 @@
       <div class="form-group">
         <label for="link">Lien</label>
         <input
-          type="number"
+          type="text"
           class="form-control"
           id="link"
           required
-          pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+          pattern="^[a-zA-Zàéèç]{1,99}$"
           [(ngModel)]="site.link"
           name="Lien"
           #link="ngModel"
         />
         <div [hidden]="link.valid || link.pristine" class="card-panel red">
-          Le lien du site est requis (1-255)
+          Le lien du site est requis (1-99)
         </div>
       </div>
 

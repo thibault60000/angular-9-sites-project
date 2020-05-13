@@ -3,15 +3,15 @@ import { Router } from "@angular/router";
 import { OnInit } from "@angular/core";
 
 // Services
-import { SitesService } from "./services/sites.service";
+import { SitesService } from "../services/sites.service";
 
 // Imports Relatifs
-import { Site } from "./objects/site";
+import { Site } from "../objects/site";
 
 @Component({
   selector: "list-site",
-  templateUrl: `./app/sites/list-sites.component.html`,
-  styleUrls: [`./app/sites/list-sites.component.css`]
+  templateUrl: `./app/sites/list-sites/list-sites.component.html`,
+  styleUrls: [`./app/sites/list-sites/list-sites.component.css`]
 })
 export class ListSitesComponent implements OnInit {
   // Variables

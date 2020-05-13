@@ -1,13 +1,18 @@
 // System
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 // Routes
 import { SitesRoutingModule } from "./sites-routing.module";
 
 // Composants
-import { ListSitesComponent } from "./list-sites.component";
-import { DetailsSiteComponent } from "./details-site.component";
+import { ListSitesComponent } from "./list-sites/list-sites.component";
+import { DetailsSiteComponent } from "./details-site/details-site.component";
+import { EditSiteComponent } from "./edit-site/edit-site.component";
+
+// Forms
+import { SiteFormComponent } from "./site-form/site-form.component";
 
 // Directives
 import { BorderCardDirective } from "./directives/border-card.directive";
@@ -19,13 +24,15 @@ import { SiteColorTypePipe } from "./pipes/site-color-type.pipe";
 import { SitesService } from "./services/sites.service";
 
 @NgModule({
-  imports: [CommonModule, SitesRoutingModule],
+  imports: [CommonModule, FormsModule, SitesRoutingModule],
   // CommonModule est comme BrowserModule mais ne lance pas l'application dans le navigateur, CommonModule suffit
   declarations: [
     ListSitesComponent,
     DetailsSiteComponent,
     BorderCardDirective,
     SiteColorTypePipe,
+    EditSiteComponent,
+    SiteFormComponent,
   ],
   providers: [SitesService],
 })

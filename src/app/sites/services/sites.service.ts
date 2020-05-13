@@ -17,6 +17,6 @@ export class SitesService {
   }
 
   getSiteTypes(): string[] {
-    return ["dessin", "collaboratif", "scrum", "css", "design"];
+    return ["dessin", "collaboratif", "scrum", "css", "design", "tutoriel", "code", "framework"];
   }
 }
