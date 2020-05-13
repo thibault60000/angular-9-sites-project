@@ -21,6 +21,9 @@ var SitesService = /** @class */ (function () {
         var site = sites.filter(function (s) { return s.id === id; });
         return site[0];
     };
+    SitesService.prototype.getSiteTypes = function () {
+        return ["dessin", "collaboratif", "scrum", "css", "design"];
+    };
     SitesService = __decorate([
         core_1.Injectable()
     ], SitesService);

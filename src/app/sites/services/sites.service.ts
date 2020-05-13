@@ -15,4 +15,8 @@ export class SitesService {
     const site = sites.filter((s) => s.id === id);
     return site[0];
   }
+
+  getSiteTypes(): string[] {
+    return ["dessin", "collaboratif", "scrum", "css", "design"];
+  }
 }
