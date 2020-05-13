@@ -17,6 +17,8 @@ var details_site_component_1 = require("./details-site.component");
 var border_card_directive_1 = require("./directives/border-card.directive");
 // Pipes
 var site_color_type_pipe_1 = require("./pipes/site-color-type.pipe");
+// Services
+var sites_service_1 = require("./services/sites.service");
 var SitesModule = /** @class */ (function () {
     function SitesModule() {
     }
@@ -30,7 +32,7 @@ var SitesModule = /** @class */ (function () {
                 border_card_directive_1.BorderCardDirective,
                 site_color_type_pipe_1.SiteColorTypePipe,
             ],
-            providers: [],
+            providers: [sites_service_1.SitesService],
         })
     ], SitesModule);
     return SitesModule;

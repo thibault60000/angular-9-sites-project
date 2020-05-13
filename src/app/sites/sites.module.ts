@@ -14,6 +14,9 @@ import { BorderCardDirective } from "./directives/border-card.directive";
 // Pipes
 import { SiteColorTypePipe } from "./pipes/site-color-type.pipe";
 
+// Services
+import { SitesService } from "./services/sites.service";
+
 @NgModule({
   imports: [CommonModule, SitesRoutingModule],
   // CommonModule est comme BrowserModule mais ne lance pas l'application dans le navigateur, CommonModule suffit
@@ -23,6 +26,6 @@ import { SiteColorTypePipe } from "./pipes/site-color-type.pipe";
     BorderCardDirective,
     SiteColorTypePipe,
   ],
-  providers: [],
+  providers: [SitesService],
 })
 export class SitesModule {}

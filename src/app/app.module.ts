@@ -9,10 +9,6 @@ import { PageNotFoundComponent } from "./page-not-found.component";
 // Modules
 import { SitesModule } from "./sites/sites.module";
 
-// Directives
-
-// Pipes
-
 @NgModule({
   // BrwoserModule en 1er, et le AppRouting à la fin
   imports: [BrowserModule, SitesModule, AppRoutingModule],

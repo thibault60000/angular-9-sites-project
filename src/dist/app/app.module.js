@@ -14,8 +14,6 @@ var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // Modules
 var sites_module_1 = require("./sites/sites.module");
-// Directives
-// Pipes
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }

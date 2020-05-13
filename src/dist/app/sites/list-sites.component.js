@@ -11,16 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var mock_sites_1 = require("./mocks/mock-sites");
+// Services
+var sites_service_1 = require("./services/sites.service");
 var ListSitesComponent = /** @class */ (function () {
-    function ListSitesComponent(router) {
+    // Constructeur
+    function ListSitesComponent(router, sitesService) {
         this.router = router;
+        this.sitesService = sitesService;
         // Variables
         this.sites = null;
     }
     // Initialization
     ListSitesComponent.prototype.ngOnInit = function () {
-        this.sites = mock_sites_1.SITES;
+        this.sites = this.sitesService.getSites();
     };
     // Select a Site to redirect
     ListSitesComponent.prototype.selectSite = function (site) {
@@ -31,9 +34,9 @@ var ListSitesComponent = /** @class */ (function () {
         core_1.Component({
             selector: "list-site",
             templateUrl: "./app/sites/list-sites.component.html",
-            styleUrls: ["./app/sites/list-sites.component.css"],
+            styleUrls: ["./app/sites/list-sites.component.css"]
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, sites_service_1.SitesService])
     ], ListSitesComponent);
     return ListSitesComponent;
 }());

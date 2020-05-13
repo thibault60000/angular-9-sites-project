@@ -2,24 +2,27 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { OnInit } from "@angular/core";
 
+// Services
+import { SitesService } from "./services/sites.service";
+
 // Imports Relatifs
 import { Site } from "./objects/site";
-import { SITES } from "./mocks/mock-sites";
 
 @Component({
   selector: "list-site",
   templateUrl: `./app/sites/list-sites.component.html`,
-  styleUrls: [`./app/sites/list-sites.component.css`],
+  styleUrls: [`./app/sites/list-sites.component.css`]
 })
 export class ListSitesComponent implements OnInit {
   // Variables
   sites: Site[] = null;
 
-  constructor(private router: Router) {}
+  // Constructeur
+  constructor(private router: Router, private sitesService: SitesService) {}
 
   // Initialization
   ngOnInit() {
-    this.sites = SITES;
+    this.sites = this.sitesService.getSites();
   }
 
   // Select a Site to redirect

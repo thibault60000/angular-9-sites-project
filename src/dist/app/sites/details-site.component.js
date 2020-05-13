@@ -11,34 +11,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var mock_sites_1 = require("./mocks/mock-sites");
+// Services
+var sites_service_1 = require("./services/sites.service");
 var DetailsSiteComponent = /** @class */ (function () {
-    function DetailsSiteComponent(route, router) {
+    // Constructeur
+    function DetailsSiteComponent(route, router, sitesService) {
         this.route = route;
         this.router = router;
-        this.sites = null;
+        this.sitesService = sitesService;
         this.site = null;
     }
     // Initialisation
     DetailsSiteComponent.prototype.ngOnInit = function () {
-        this.sites = mock_sites_1.SITES;
         var id = +this.route.snapshot.paramMap.get("id");
-        for (var i = 0; i < this.sites.length; i++) {
-            if (this.sites[i].id == id) {
-                this.site = this.sites[i];
-            }
-        }
+        this.site = this.sitesService.getSite(id);
     };
-    // Retour
+    // Retour page principale
     DetailsSiteComponent.prototype.goBack = function () {
         this.router.navigate(["/sites"]);
     };
     DetailsSiteComponent = __decorate([
         core_1.Component({
             selector: "details-site",
-            templateUrl: "./app/sites/details-site.component.html",
+            templateUrl: "./app/sites/details-site.component.html"
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            router_1.Router,
+            sites_service_1.SitesService])
     ], DetailsSiteComponent);
     return DetailsSiteComponent;
 }());

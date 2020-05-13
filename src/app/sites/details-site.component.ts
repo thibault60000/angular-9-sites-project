@@ -1,31 +1,33 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router, Params } from "@angular/router";
+
+// Services
+import { SitesService } from "./services/sites.service";
+
+// Objects
 import { Site } from "./objects/site";
-import { SITES } from "./mocks/mock-sites";
 
 @Component({
   selector: "details-site",
-  templateUrl: "./app/sites/details-site.component.html",
+  templateUrl: "./app/sites/details-site.component.html"
 })
 export class DetailsSiteComponent implements OnInit {
-  sites: Site[] = null;
   site: Site = null;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  // Constructeur
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private sitesService: SitesService
+  ) {}
 
   // Initialisation
   ngOnInit(): void {
-    this.sites = SITES;
-
     let id = +this.route.snapshot.paramMap.get("id");
-    for (let i = 0; i < this.sites.length; i++) {
-      if (this.sites[i].id == id) {
-        this.site = this.sites[i];
-      }
-    }
+    this.site = this.sitesService.getSite(id);
   }
 
-  // Retour
+  // Retour page principale
   goBack(): void {
     this.router.navigate(["/sites"]);
   }
