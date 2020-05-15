@@ -57,7 +57,12 @@ export class SiteFormComponent implements OnInit {
 
   // La méthode appelée lorsque le formulaire est soumis.
   onSubmit(): void {
-    console.log("Submit form !");
+    console.log(this.site);
+    this.sitesService.editSite(this.site).subscribe(() => this.goRedirect());
+  }
+
+  // Redirection après l'édition du site
+  goRedirect(): void {
     let link = ["/site", this.site.id];
     this.router.navigate(link);
   }

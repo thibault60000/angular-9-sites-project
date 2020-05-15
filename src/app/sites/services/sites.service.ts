@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Site } from "../objects/site";
-import { SITES } from "../mocks/mock-sites";
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -13,7 +12,7 @@ export class SitesService {
   constructor(private http: HttpClient) {}
 
   // Variables
-  private url:string = "api/sites";
+  private url: string = "api/sites";
 
   // Méthode log
   private log(log: string) {
@@ -35,6 +34,18 @@ export class SitesService {
     return this.http.get<Site[]>(this.url).pipe(
       tap((_) => this.log("sites récupérés")),
       catchError(this.handleError("getSites", []))
+    );
+  }
+
+  // Editer un site
+  editSite(site: Site): Observable<Site> {
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" }),
+    };
+
+    return this.http.put(this.url, site, httpOptions).pipe(
+      tap((_) => this.log(`site édité avec ID=${site.id}`)),
+      catchError(this.handleError<any>(`editSite, avec id=${site.id}`))
     );
   }
 

@@ -38,6 +38,14 @@ var SitesService = /** @class */ (function () {
         var _this = this;
         return this.http.get(this.url).pipe(operators_1.tap(function (_) { return _this.log("sites récupérés"); }), operators_1.catchError(this.handleError("getSites", [])));
     };
+    // Editer un site
+    SitesService.prototype.editSite = function (site) {
+        var _this = this;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ "Content-Type": "application/json" }),
+        };
+        return this.http.put(this.url, site, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("site \u00E9dit\u00E9 avec ID=" + site.id); }), operators_1.catchError(this.handleError("editSite, avec id=" + site.id)));
+    };
     // Retourne le site avec l'identifiant passé en paramètre
     SitesService.prototype.getSite = function (id) {
         var _this = this;

@@ -55,7 +55,12 @@ var SiteFormComponent = /** @class */ (function () {
     };
     // La méthode appelée lorsque le formulaire est soumis.
     SiteFormComponent.prototype.onSubmit = function () {
-        console.log("Submit form !");
+        var _this = this;
+        console.log(this.site);
+        this.sitesService.editSite(this.site).subscribe(function () { return _this.goRedirect(); });
+    };
+    // Redirection après l'édition du site
+    SiteFormComponent.prototype.goRedirect = function () {
         var link = ["/site", this.site.id];
         this.router.navigate(link);
     };

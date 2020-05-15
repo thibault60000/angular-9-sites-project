@@ -31,7 +31,7 @@
           class="form-control"
           id="description"
           required
-          pattern="^[a-zA-Zàéèç]{1,99}$"
+          pattern="[a-zA-Z0-9\s]{1,99}"
           [(ngModel)]="site.description"
           name="Description"
           #description="ngModel"
@@ -52,7 +52,7 @@
           class="form-control"
           id="link"
           required
-          pattern="^[a-zA-Zàéèç]{1,99}$"
+          pattern="[a-zA-Z0-9\s\/\:\.]{1,99}"
           [(ngModel)]="site.link"
           name="Lien"
           #link="ngModel"
