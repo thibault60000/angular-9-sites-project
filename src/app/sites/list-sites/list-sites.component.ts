@@ -11,7 +11,7 @@ import { Site } from "../objects/site";
 @Component({
   selector: "list-site",
   templateUrl: `./app/sites/list-sites/list-sites.component.html`,
-  styleUrls: [`./app/sites/list-sites/list-sites.component.css`]
+  styleUrls: [`./app/sites/list-sites/list-sites.component.css`],
 })
 export class ListSitesComponent implements OnInit {
   // Variables
@@ -22,9 +22,13 @@ export class ListSitesComponent implements OnInit {
 
   // Initialization
   ngOnInit() {
-    this.sites = this.sitesService.getSites();
+    this.getSites();
   }
 
+  // Get Liste des Sites
+  getSites(): void {
+    this.sitesService.getSites().subscribe((sites) => (this.sites = sites));
+  }
   // Select a Site to redirect
   selectSite(site: Site) {
     let link = ["/site", site.id];

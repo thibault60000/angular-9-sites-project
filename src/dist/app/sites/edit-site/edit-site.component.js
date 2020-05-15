@@ -22,7 +22,12 @@ var EditSiteComponent = /** @class */ (function () {
     }
     EditSiteComponent.prototype.ngOnInit = function () {
         var id = +this.route.snapshot.params["id"];
-        this.site = this.sitesService.getSite(id);
+        this.getSite(id);
+    };
+    // Get Site avec son ID
+    EditSiteComponent.prototype.getSite = function (id) {
+        var _this = this;
+        this.sitesService.getSite(id).subscribe(function (site) { return _this.site = site; });
     };
     EditSiteComponent = __decorate([
         core_1.Component({

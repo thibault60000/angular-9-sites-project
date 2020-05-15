@@ -6,21 +6,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// System
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+// HTTP
+var http_1 = require("@angular/common/http");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+// Routing
 var app_routing_module_1 = require("./app-routing.module");
 // Composants
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // Modules
 var sites_module_1 = require("./sites/sites.module");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             // BrwoserModule en 1er, et le AppRouting à la fin
-            imports: [platform_browser_1.BrowserModule, sites_module_1.SitesModule, app_routing_module_1.AppRoutingModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                http_1.HttpClientModule,
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, {
+                    dataEncapsulation: false,
+                }),
+                sites_module_1.SitesModule,
+                app_routing_module_1.AppRoutingModule,
+            ],
             declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent],
             bootstrap: [app_component_1.AppComponent],
         })

@@ -23,7 +23,12 @@ var ListSitesComponent = /** @class */ (function () {
     }
     // Initialization
     ListSitesComponent.prototype.ngOnInit = function () {
-        this.sites = this.sitesService.getSites();
+        this.getSites();
+    };
+    // Get Liste des Sites
+    ListSitesComponent.prototype.getSites = function () {
+        var _this = this;
+        this.sitesService.getSites().subscribe(function (sites) { return (_this.sites = sites); });
     };
     // Select a Site to redirect
     ListSitesComponent.prototype.selectSite = function (site) {
@@ -34,7 +39,7 @@ var ListSitesComponent = /** @class */ (function () {
         core_1.Component({
             selector: "list-site",
             templateUrl: "./app/sites/list-sites/list-sites.component.html",
-            styleUrls: ["./app/sites/list-sites/list-sites.component.css"]
+            styleUrls: ["./app/sites/list-sites/list-sites.component.css"],
         }),
         __metadata("design:paramtypes", [router_1.Router, sites_service_1.SitesService])
     ], ListSitesComponent);

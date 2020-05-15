@@ -28,6 +28,11 @@ export class EditSiteComponent implements OnInit {
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params["id"];
-    this.site = this.sitesService.getSite(id);
+    this.getSite(id);
+  }
+
+  // Get Site avec son ID
+  getSite(id: number): void {
+    this.sitesService.getSite(id).subscribe(site => this.site = site);
   }
 }

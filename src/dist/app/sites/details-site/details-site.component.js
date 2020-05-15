@@ -24,7 +24,12 @@ var DetailsSiteComponent = /** @class */ (function () {
     // Initialisation
     DetailsSiteComponent.prototype.ngOnInit = function () {
         var id = +this.route.snapshot.paramMap.get("id");
-        this.site = this.sitesService.getSite(id);
+        this.getSite(id);
+    };
+    // Get Site avec son ID
+    DetailsSiteComponent.prototype.getSite = function (id) {
+        var _this = this;
+        this.sitesService.getSite(id).subscribe(function (site) { return _this.site = site; });
     };
     // Retour page principale
     DetailsSiteComponent.prototype.goBack = function () {
