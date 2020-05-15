@@ -10,6 +10,7 @@ import { SitesRoutingModule } from "./sites-routing.module";
 import { ListSitesComponent } from "./list-sites/list-sites.component";
 import { DetailsSiteComponent } from "./details-site/details-site.component";
 import { EditSiteComponent } from "./edit-site/edit-site.component";
+import { SitesSearchComponent } from "./search-sites/search-sites.component";
 
 // Forms
 import { SiteFormComponent } from "./site-form/site-form.component";
@@ -33,6 +34,7 @@ import { SitesService } from "./services/sites.service";
     SiteColorTypePipe,
     EditSiteComponent,
     SiteFormComponent,
+    SitesSearchComponent,
   ],
   providers: [SitesService],
 })

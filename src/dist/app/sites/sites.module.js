@@ -16,6 +16,7 @@ var sites_routing_module_1 = require("./sites-routing.module");
 var list_sites_component_1 = require("./list-sites/list-sites.component");
 var details_site_component_1 = require("./details-site/details-site.component");
 var edit_site_component_1 = require("./edit-site/edit-site.component");
+var search_sites_component_1 = require("./search-sites/search-sites.component");
 // Forms
 var site_form_component_1 = require("./site-form/site-form.component");
 // Directives
@@ -38,6 +39,7 @@ var SitesModule = /** @class */ (function () {
                 site_color_type_pipe_1.SiteColorTypePipe,
                 edit_site_component_1.EditSiteComponent,
                 site_form_component_1.SiteFormComponent,
+                search_sites_component_1.SitesSearchComponent,
             ],
             providers: [sites_service_1.SitesService],
         })

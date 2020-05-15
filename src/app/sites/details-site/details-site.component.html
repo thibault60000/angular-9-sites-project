@@ -1,18 +1,18 @@
 <div *ngIf="site" class="row">
-  <div class="col s12 m8 offset-m2">
+  <div>
     <!-- Site title-->
-    <h2 class="header center">{{ site.name }}</h2>
+    <h2 class="header">{{ site.name }}</h2>
 
     <!-- Image -->
-    <div class="card horizontal hoverable">
+    <div class="card">
       <div class="card-image">
-        <img [src]="site.image" [ngStyle]="{'padding': '2rem'}" />
+        <img [src]="site.image" [ngStyle]="{ padding: '2rem' }" />
       </div>
 
       <!-- Card -->
       <div class="card-stacked">
         <div class="card-content">
-          <table class="bordered striped">
+          <table>
             <tbody>
               <tr>
                 <!-- Name -->
@@ -57,9 +57,10 @@
           </table>
         </div>
         <!-- Retour -->
-        <div class="card-action" [ngStyle]="{'cursor': 'pointer'}">
-          <a (click)="goBack()">Retour</a>
-          <a (click)="goEdit(site)">Editer</a>
+        <div class="card-action" [ngStyle]="{ cursor: 'pointer' }">
+          <a (click)="goBack()" class="return">Retour</a>
+          <a (click)="goEdit(site)" class="edit-site">Editer</a>
+          <a (click)="delete(site)" class="delete-site">Supprimer</a>
         </div>
       </div>
     </div>
@@ -67,4 +68,4 @@
 </div>
 
 <!-- 0 sites -->
-<h4 *ngIf="!site" class="center">Aucun Site à afficher !</h4>
+<h4 *ngIf="!site">Aucun Site à afficher !</h4>

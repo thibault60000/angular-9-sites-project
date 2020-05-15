@@ -26,10 +26,15 @@ var DetailsSiteComponent = /** @class */ (function () {
         var id = +this.route.snapshot.paramMap.get("id");
         this.getSite(id);
     };
+    // Supprimer site
+    DetailsSiteComponent.prototype.delete = function (site) {
+        var _this = this;
+        this.sitesService.deleteSite(site).subscribe(function (_) { return _this.goBack(); });
+    };
     // Get Site avec son ID
     DetailsSiteComponent.prototype.getSite = function (id) {
         var _this = this;
-        this.sitesService.getSite(id).subscribe(function (site) { return _this.site = site; });
+        this.sitesService.getSite(id).subscribe(function (site) { return (_this.site = site); });
     };
     // Retour page principale
     DetailsSiteComponent.prototype.goBack = function () {

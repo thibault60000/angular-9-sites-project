@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-content">
+    <div class="input-field">
+      <input
+        #searchBox
+        (keyup)="search(searchBox.value)"
+        placeholder="Rechercher un site"
+      />
+    </div>
+
+    <div class="collection">
+      <!-- Le $ permet de n'afficher la valeur que si le | async est traité -->
+      <a
+        *ngFor="let site of sites$ | async"
+        (click)="gotoDetails(sites)"
+        class="collection-item"
+      >
+        {{ site.name }}
+      </a>
+    </div>
+  </div>
+</div>

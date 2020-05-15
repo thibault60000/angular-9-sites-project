@@ -33,6 +33,22 @@ var SitesService = /** @class */ (function () {
             return rxjs_1.of(result); // Of transforme les données en Observable
         };
     };
+    // Supprime le site
+    SitesService.prototype.deleteSite = function (site) {
+        var _this = this;
+        var url = this.url + "/" + site.id;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ "Content-Type": "application/json" }),
+        };
+        return this.http.delete(url, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("site supprim\u00E9 avec id : " + site.id); }), operators_1.catchError(this.handleError("deleteSite")));
+    };
+    // Recherche des sites selon un nom
+    SitesService.prototype.searchSites = function (term) {
+        var _this = this;
+        if (!term.trim())
+            return rxjs_1.of([]);
+        return this.http.get(this.url + "/?name=" + term).pipe(operators_1.tap(function (_) { return _this.log("Site avec le nom : " + term); }), operators_1.catchError(this.handleError("searchSites", [])));
+    };
     // Retourne tous les sites
     SitesService.prototype.getSites = function () {
         var _this = this;
@@ -52,6 +68,7 @@ var SitesService = /** @class */ (function () {
         var url = this.url + "/" + id;
         return this.http.get(url).pipe(operators_1.tap(function (_) { return _this.log("site r\u00E9cup\u00E9r\u00E9 avec ID=" + id); }), operators_1.catchError(this.handleError("getSite, avec id=" + id)));
     };
+    // Retourn le référentiel 'type de site'
     SitesService.prototype.getSiteTypes = function () {
         return [
             "dessin",

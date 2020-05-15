@@ -29,6 +29,27 @@ export class SitesService {
     };
   }
 
+  // Supprime le site
+  deleteSite(site: Site): Observable<Site> {
+    const url = `${this.url}/${site.id}`;
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" }),
+    };
+    return this.http.delete<Site>(url, httpOptions).pipe(
+      tap((_) => this.log(`site supprimé avec id : ${site.id}`)),
+      catchError(this.handleError<Site>("deleteSite"))
+    );
+  }
+
+  // Recherche des sites selon un nom
+  searchSites(term: string): Observable<Site[]> {
+    if (!term.trim()) return of([]);
+    return this.http.get<Site[]>(`${this.url}/?name=${term}`).pipe(
+      tap((_) => this.log(`Site avec le nom : ${term}`)),
+      catchError(this.handleError<Site[]>(`searchSites`, []))
+    );
+  }
+
   // Retourne tous les sites
   getSites(): Observable<Site[]> {
     return this.http.get<Site[]>(this.url).pipe(
@@ -59,6 +80,7 @@ export class SitesService {
     );
   }
 
+  // Retourn le référentiel 'type de site'
   getSiteTypes(): string[] {
     return [
       "dessin",

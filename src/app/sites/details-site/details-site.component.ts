@@ -27,9 +27,13 @@ export class DetailsSiteComponent implements OnInit {
     this.getSite(id);
   }
 
+  // Supprimer site
+  delete(site: Site): void {
+    this.sitesService.deleteSite(site).subscribe((_) => this.goBack());
+  }
   // Get Site avec son ID
   getSite(id: number): void {
-    this.sitesService.getSite(id).subscribe(site => this.site = site);
+    this.sitesService.getSite(id).subscribe((site) => (this.site = site));
   }
 
   // Retour page principale
