@@ -49,6 +49,7 @@ var DetailsSiteComponent = /** @class */ (function () {
         core_1.Component({
             selector: "details-site",
             templateUrl: "./app/sites/details-site/details-site.component.html",
+            styles: [".loader { position: }"],
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute,
             router_1.Router,

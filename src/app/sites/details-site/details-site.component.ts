@@ -10,6 +10,7 @@ import { Site } from "../objects/site";
 @Component({
   selector: "details-site",
   templateUrl: "./app/sites/details-site/details-site.component.html",
+  styles: [".loader { position: }"],
 })
 export class DetailsSiteComponent implements OnInit {
   site: Site = null;

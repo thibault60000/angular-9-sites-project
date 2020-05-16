@@ -1,0 +1,1 @@
+{"version":3,"file":"loader.component.js","sourceRoot":"","sources":["../../app/loader.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0C;AA4C1C;IAAA;IAA8B,CAAC;IAAlB,eAAe;QA1C3B,gBAAS,CAAC;YACT,QAAQ,EAAE,YAAY;YACtB,QAAQ,EAAE,uCAAqC;YAC/C,MAAM,EAAE;gBACN,k8BAmCC;aACF;SACF,CAAC;OACW,eAAe,CAAG;IAAD,sBAAC;CAAA,AAA/B,IAA+B;AAAlB,0CAAe"}
