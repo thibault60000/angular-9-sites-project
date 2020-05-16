@@ -16,18 +16,18 @@ var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var app_routing_module_1 = require("./app-routing.module");
 // Composants
 var app_component_1 = require("./app.component");
-var page_not_found_component_1 = require("./page-not-found.component");
+var page_not_found_component_1 = require("./pages/not-found/page-not-found.component");
 // Modules
 // System
 var forms_1 = require("@angular/forms");
 // Modules
-var sites_module_1 = require("./sites/sites.module");
-var login_routing_module_1 = require("./login-routing.module");
+var sites_module_1 = require("./pages/site/sites.module");
+var login_routing_module_1 = require("./pages/authentication/login-routing.module");
 // Services
-var in_memory_data_service_1 = require("./in-memory-data.service");
-var auth_service_1 = require("./auth.service");
+var in_memory_data_service_1 = require("./services/in-memory-data.service");
+var auth_service_1 = require("./services/auth.service");
 // Components
-var login_component_1 = require("./login.component");
+var login_component_1 = require("./pages/authentication/login.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
