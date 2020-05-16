@@ -13,11 +13,23 @@ var router_1 = require("@angular/router");
 var list_sites_component_1 = require("./list-sites/list-sites.component");
 var details_site_component_1 = require("./details-site/details-site.component");
 var edit_site_component_1 = require("./edit-site/edit-site.component");
+// Guard
+var auth_guard_service_1 = require("../auth-guard.service");
 // les routes du module Pokémon
 var sitesRoutes = [
-    { path: "sites", component: list_sites_component_1.ListSitesComponent },
-    { path: "site/edit/:id", component: edit_site_component_1.EditSiteComponent },
-    { path: "site/:id", component: details_site_component_1.DetailsSiteComponent },
+    {
+        path: "site",
+        canActivate: [auth_guard_service_1.AuthGuard],
+        children: [
+            { path: "all", component: list_sites_component_1.ListSitesComponent },
+            {
+                path: "edit/:id",
+                component: edit_site_component_1.EditSiteComponent,
+                canActivate: [auth_guard_service_1.AuthGuard],
+            },
+            { path: ":id", component: details_site_component_1.DetailsSiteComponent },
+        ],
+    },
 ];
 var SitesRoutingModule = /** @class */ (function () {
     function SitesRoutingModule() {

@@ -11,23 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(router) {
+var auth_service_1 = require("./auth.service");
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(authService, router) {
+        this.authService = authService;
         this.router = router;
     }
-    AppComponent.prototype.goSitesList = function () {
-        var link = ["site/all"];
-        this.router.navigate(link);
+    AuthGuard.prototype.canActivate = function (route, // route = future route qui sera appelée
+    state // state = Futur état du router de l'application
+    ) {
+        var url = state.url;
+        return this.checkLogin(url);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: "app-root",
-            templateUrl: "./app/app.component.html",
-            styleUrls: ["./app/app.component.css"]
-        }),
-        __metadata("design:paramtypes", [router_1.Router])
-    ], AppComponent);
-    return AppComponent;
+    AuthGuard.prototype.checkLogin = function (url) {
+        if (this.authService.isLoggedIn) {
+            return true;
+        }
+        this.authService.redirectUrl = url;
+        this.router.navigate(["/login"]);
+        return false;
+    };
+    AuthGuard = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
+    ], AuthGuard);
+    return AuthGuard;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth-guard.service.js.map

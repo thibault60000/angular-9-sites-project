@@ -11,7 +11,7 @@ var router_1 = require("@angular/router");
 var page_not_found_component_1 = require("./page-not-found.component");
 // routes
 var appRoutes = [
-    { path: "", redirectTo: "sites", pathMatch: "full" },
+    { path: "", redirectTo: "site/all", pathMatch: "full" },
     { path: "**", component: page_not_found_component_1.PageNotFoundComponent },
 ];
 var AppRoutingModule = /** @class */ (function () {

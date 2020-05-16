@@ -39,12 +39,12 @@ export class DetailsSiteComponent implements OnInit {
 
   // Retour page principale
   goBack(): void {
-    this.router.navigate(["/sites"]);
+    this.router.navigate(["/site/all"]);
   }
 
   // Aller à l'édition d'un site
   goEdit(site: Site): void {
-    let link = ["/site/edit", site.id];
+    let link = ["site/edit", site.id];
     this.router.navigate(link);
   }
 }

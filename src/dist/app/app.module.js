@@ -18,25 +18,36 @@ var app_routing_module_1 = require("./app-routing.module");
 var app_component_1 = require("./app.component");
 var page_not_found_component_1 = require("./page-not-found.component");
 // Modules
+// System
+var forms_1 = require("@angular/forms");
+// Modules
 var sites_module_1 = require("./sites/sites.module");
+var login_routing_module_1 = require("./login-routing.module");
+// Services
 var in_memory_data_service_1 = require("./in-memory-data.service");
+var auth_service_1 = require("./auth.service");
+// Components
+var login_component_1 = require("./login.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            // BrwoserModule en 1er, et le AppRouting à la fin
+            // BrowserModule en 1er, et le AppRouting à la fin
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
+                forms_1.FormsModule,
                 angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, {
                     dataEncapsulation: false,
                 }),
                 sites_module_1.SitesModule,
+                login_routing_module_1.LoginRoutingModule,
                 app_routing_module_1.AppRoutingModule,
             ],
-            declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent],
+            declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent, login_component_1.LoginComponent],
             bootstrap: [app_component_1.AppComponent],
+            providers: [auth_service_1.AuthService],
         })
     ], AppModule);
     return AppModule;

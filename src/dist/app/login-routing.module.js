@@ -7,16 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var PageNotFoundComponent = /** @class */ (function () {
-    function PageNotFoundComponent() {
+var router_1 = require("@angular/router");
+var auth_service_1 = require("./auth.service");
+var login_component_1 = require("./login.component");
+var LoginRoutingModule = /** @class */ (function () {
+    function LoginRoutingModule() {
     }
-    PageNotFoundComponent = __decorate([
-        core_1.Component({
-            selector: "page-404",
-            template: "\n    <div class=\"center\">\n      <div>\n        <img src=\"https://www.innoludic.com/images/bg_404.png\" />\n      </div>\n      <div>\n        <a routerLink=\"/site/all\" class=\"waves-effect waves-teal btn-flat\">\n          Retourner \u00E0 l' accueil\n        </a>\n      </div>\n    </div>\n  ",
+    LoginRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forChild([{ path: "login", component: login_component_1.LoginComponent }]),
+            ],
+            exports: [router_1.RouterModule],
+            providers: [auth_service_1.AuthService],
         })
-    ], PageNotFoundComponent);
-    return PageNotFoundComponent;
+    ], LoginRoutingModule);
+    return LoginRoutingModule;
 }());
-exports.PageNotFoundComponent = PageNotFoundComponent;
-//# sourceMappingURL=page-not-found.component.js.map
+exports.LoginRoutingModule = LoginRoutingModule;
+//# sourceMappingURL=login-routing.module.js.map

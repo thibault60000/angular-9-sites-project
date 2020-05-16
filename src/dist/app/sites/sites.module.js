@@ -26,6 +26,8 @@ var border_card_directive_1 = require("./directives/border-card.directive");
 var site_color_type_pipe_1 = require("./pipes/site-color-type.pipe");
 // Services
 var sites_service_1 = require("./services/sites.service");
+// Guard
+var auth_guard_service_1 = require("../auth-guard.service");
 var SitesModule = /** @class */ (function () {
     function SitesModule() {
     }
@@ -43,7 +45,7 @@ var SitesModule = /** @class */ (function () {
                 loader_component_1.LoaderComponent,
                 search_sites_component_1.SitesSearchComponent,
             ],
-            providers: [sites_service_1.SitesService],
+            providers: [sites_service_1.SitesService, auth_guard_service_1.AuthGuard],
         })
     ], SitesModule);
     return SitesModule;

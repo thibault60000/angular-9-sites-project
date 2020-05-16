@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
         <img src="https://www.innoludic.com/images/bg_404.png" />
       </div>
       <div>
-        <a routerLink="/sites" class="waves-effect waves-teal btn-flat">
+        <a routerLink="/site/all" class="waves-effect waves-teal btn-flat">
           Retourner à l' accueil
         </a>
       </div>

@@ -31,7 +31,7 @@ var DetailsSiteComponent = /** @class */ (function () {
     };
     // Retour
     DetailsSiteComponent.prototype.goBack = function () {
-        this.router.navigate(["/sites"]);
+        this.router.navigate(["/site/all"]);
     };
     DetailsSiteComponent = __decorate([
         core_1.Component({

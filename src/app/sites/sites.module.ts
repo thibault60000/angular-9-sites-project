@@ -25,6 +25,9 @@ import { SiteColorTypePipe } from "./pipes/site-color-type.pipe";
 // Services
 import { SitesService } from "./services/sites.service";
 
+// Guard
+import { AuthGuard } from "../auth-guard.service";
+
 @NgModule({
   imports: [CommonModule, FormsModule, SitesRoutingModule],
   // CommonModule est comme BrowserModule mais ne lance pas l'application dans le navigateur, CommonModule suffit
@@ -38,6 +41,6 @@ import { SitesService } from "./services/sites.service";
     LoaderComponent,
     SitesSearchComponent,
   ],
-  providers: [SitesService],
+  providers: [SitesService, AuthGuard],
 })
 export class SitesModule {}

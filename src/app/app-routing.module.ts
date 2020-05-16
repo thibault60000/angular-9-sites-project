@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from "./page-not-found.component";
 
 // routes
 const appRoutes: Routes = [
-  { path: "", redirectTo: "sites", pathMatch: "full" },
+  { path: "", redirectTo: "site/all", pathMatch: "full" },
   { path: "**", component: PageNotFoundComponent },
 ];
 

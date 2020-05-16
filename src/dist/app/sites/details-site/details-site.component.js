@@ -38,11 +38,11 @@ var DetailsSiteComponent = /** @class */ (function () {
     };
     // Retour page principale
     DetailsSiteComponent.prototype.goBack = function () {
-        this.router.navigate(["/sites"]);
+        this.router.navigate(["/site/all"]);
     };
     // Aller à l'édition d'un site
     DetailsSiteComponent.prototype.goEdit = function (site) {
-        var link = ["/site/edit", site.id];
+        var link = ["site/edit", site.id];
         this.router.navigate(link);
     };
     DetailsSiteComponent = __decorate([
