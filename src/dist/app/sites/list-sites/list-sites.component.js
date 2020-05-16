@@ -10,20 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 // Services
 var sites_service_1 = require("../services/sites.service");
 var ListSitesComponent = /** @class */ (function () {
     // Constructeur
-    function ListSitesComponent(router, sitesService) {
+    function ListSitesComponent(router, sitesService, titleService) {
         this.router = router;
         this.sitesService = sitesService;
+        this.titleService = titleService;
         // Variables
         this.sites = null;
     }
     // Initialization
     ListSitesComponent.prototype.ngOnInit = function () {
         this.getSites();
+        this.titleService.setTitle("FUD - Liste des sites");
     };
     // Get Liste des Sites
     ListSitesComponent.prototype.getSites = function () {
@@ -41,7 +44,9 @@ var ListSitesComponent = /** @class */ (function () {
             templateUrl: "./app/sites/list-sites/list-sites.component.html",
             styleUrls: ["./app/sites/list-sites/list-sites.component.css"],
         }),
-        __metadata("design:paramtypes", [router_1.Router, sites_service_1.SitesService])
+        __metadata("design:paramtypes", [router_1.Router,
+            sites_service_1.SitesService,
+            platform_browser_1.Title])
     ], ListSitesComponent);
     return ListSitesComponent;
 }());

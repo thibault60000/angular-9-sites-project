@@ -47,7 +47,7 @@ var AppModule = /** @class */ (function () {
             ],
             declarations: [app_component_1.AppComponent, page_not_found_component_1.PageNotFoundComponent, login_component_1.LoginComponent],
             bootstrap: [app_component_1.AppComponent],
-            providers: [auth_service_1.AuthService],
+            providers: [auth_service_1.AuthService, platform_browser_1.Title],
         })
     ], AppModule);
     return AppModule;

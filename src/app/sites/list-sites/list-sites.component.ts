@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { OnInit } from "@angular/core";
 
@@ -18,11 +19,16 @@ export class ListSitesComponent implements OnInit {
   sites: Site[] = null;
 
   // Constructeur
-  constructor(private router: Router, private sitesService: SitesService) {}
+  constructor(
+    private router: Router,
+    private sitesService: SitesService,
+    private titleService: Title
+  ) {}
 
   // Initialization
   ngOnInit() {
     this.getSites();
+    this.titleService.setTitle("FUD - Liste des sites");
   }
 
   // Get Liste des Sites

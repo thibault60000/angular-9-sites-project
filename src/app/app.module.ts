@@ -1,6 +1,6 @@
 // System
 import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule, Title } from "@angular/platform-browser";
 
 // HTTP
 import { HttpClientModule } from "@angular/common/http";
@@ -43,6 +43,6 @@ import { LoginComponent } from "./login.component";
   ],
   declarations: [AppComponent, PageNotFoundComponent, LoginComponent],
   bootstrap: [AppComponent],
-  providers: [AuthService],
+  providers: [AuthService, Title],
 })
 export class AppModule {}
